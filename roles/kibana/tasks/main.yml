@@ -1,0 +1,43 @@
+---
+#nstalling Kibana
+#
+#  Add Kibana APT-repository
+- name: Adding Kibana APT repository
+  apt_repository:
+   repo: deb https://artifacts.elastic.co/packages/6.x/apt stable main
+   state: present
+# Install Kibana
+- name: Update repositories cache and install Kibana
+  apt:
+   name: kibana
+#   update_cache: yes
+# Update kibana config file to only accept local connections
+- name: Updating the config file to restrict outside access
+  lineinfile:
+   destfile: /etc/kibana/kibana.yml
+   regexp: 'server.host:'
+   line: 'server.host: localhost'
+
+- name: Defining server port
+  lineinfile:
+   destfile: /etc/kibana/kibana.yml
+   regexp: 'server.port:'
+   line: 'server.port: 5601'
+    
+- name: Defining Elasticsearch URL
+  lineinfile:
+   destfile: /etc/kibana/kibana.yml
+   regexp: 'elasticsearch.url:'
+   line: 'elasticsearch.url: "http://localhost:9200"'
+
+# Enable Kibana service
+#- name: Enabling Kibana service
+#  systemd:
+#   name: kibana
+#   enabled: yes
+#   daemon_reload: yes
+# Start Kibana service
+- name: Starting Kibana service
+  service:
+   name: kibana
+   state: started
