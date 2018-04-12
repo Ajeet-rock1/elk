@@ -2,8 +2,6 @@
 ===========
 Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
 
-![elk](/image/ansible-elk.png?raw=true)
-
 ## What does it do?
    - Automated deployment of a full ELK stack (Elasticsearch, Logstash/Fluentd, Kibana)
      * 6.x ELK versions are maintained.
@@ -30,7 +28,9 @@ Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
      - ```install_logstash: true```
      - Note: Deploying X-Pack will wrap your ES with additional authentication and security, Kibana for example will have it's own credentials now - the default is username: ```elastic``` and password: ```changeme```
        But we are not going with X-Pack solution.
+
 ## ELK Server Instructions
+
    - Clone repo and setup your hosts file
 ```
 git clone Url
@@ -47,6 +47,7 @@ ansible_system_user: ec2-user
    - Run the playbook
 ```
 ansible-playbook -i hosts elk.yml
+
 ```
    - (see playbook messages)
    - Navigate to the ELK at http://host-01:80
@@ -54,15 +55,18 @@ ansible-playbook -i hosts elk.yml
       - username: ```admin```
       - password: ```admin```
 
+
 ![elk](/image/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
 
 ![elk](/image/elk-index-5.x-2.png?raw=true "Click the blue create button.")
 
 ![elk](/image/elk-index-5.x-3.png?raw=true "Click Discover")
 
+
 ## ELK Client Instructions
    - Run the client playbook against the generated ``elk_server`` variable
 ```
+
    - Once this completes return to your ELK and you'll see log results come in from ELK/EFK clients via filebeat
 ![ELK](/image/elk-index-5.x-4.png?raw=true "watch the magic")
 
