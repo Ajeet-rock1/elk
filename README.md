@@ -1,7 +1,7 @@
 ===========
 Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
 
-![ELK](/image/ansible-elk.png?raw=true)
+
 
 ## What does it do?
    - Automated deployment of a full ELK stack (Elasticsearch, Logstash/Fluentd, Kibana)
