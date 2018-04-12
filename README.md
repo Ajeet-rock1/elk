@@ -1,5 +1,5 @@
 ===========
-Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
+Ansible Playbook for setting up the ELK Stack in  TEST Enviorment
 
 ![ELK](/images/ansible-elk.png?raw=true)
 
@@ -15,7 +15,7 @@ Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
 
 ## Requirements
    - Ubuntu14.04 LTS or RHEL server/client with no modifications
-   - ELK server with at least 8G of memory but in TDRIVE On0demand basis we are going with 4G.
+   - ELK server with at least 8G of memory but in On0demand basis we are going with 4G.
 
 
 ## Notes
@@ -33,7 +33,7 @@ Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
    - Clone repo and setup your hosts file
 ```
 git clone Url
-cd tdrive-ansible-elk
+cd ansible-elk
 sed -i 's/host-01/es1/' hosts
 sed -i 's/host-02/es2/' hosts
 ```
@@ -52,9 +52,6 @@ ansible-playbook -i hosts install/elk.yml
    - Default login is:
       - username: ```admin```
       - password: ```admin```
-   - TDRIVE2 ELK-Architecture
-
-![ELK](/images/Tdrive2_ELK_Architecture.png?raw=true ".") 
 
 ![ELK](/images/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
 
