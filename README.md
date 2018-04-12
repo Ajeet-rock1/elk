@@ -52,6 +52,9 @@ ansible-playbook -i hosts install/elk.yml
    - Default login is:
       - username: ```admin```
       - password: ```admin```
+   - TDRIVE2 ELK-Architecture
+
+![ELK](/images/Tdrive2_ELK_Architecture.png?raw=true ".") 
 
 ![ELK](/images/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
 
