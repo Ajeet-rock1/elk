@@ -37,10 +37,10 @@ cd tdrive-ansible-elk
 sed -i 's/host-01/es1/' hosts
 sed -i 's/host-02/es2/' hosts
 ```
-   - If you're using a non-root user for Ansible, e.g. AWS EC2 likes to use ec2-user then set the follow below, default is root.
+   - If you're using a non-root user for Ansible, e.g. AWS EC2 likes to use ubuntu then set the follow below, default is root.
 
 ```
-ansible_system_user: ec2-user
+ansible_system_user: ubuntu
 ```
 
    - Run the playbook
