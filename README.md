@@ -53,11 +53,11 @@ ansible-playbook -i hosts install/elk.yml
       - username: ```admin```
       - password: ```admin```
 
-![ELK](/image/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
+![ELK](/images/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
 
-![ELK](/image/elk-index-5.x-2.png?raw=true "Click the blue create button.")
+![ELK](/images/elk-index-5.x-2.png?raw=true "Click the blue create button.")
 
-![ELK](/image/elk-index-5.x-3.png?raw=true "Click Discover")
+![ELK](/images/elk-index-5.x-3.png?raw=true "Click Discover")
 
 ## ELK Client Instructions
    - Run the client playbook against the generated ``elk_server`` variable
@@ -65,7 +65,7 @@ ansible-playbook -i hosts install/elk.yml
 ansible-playbook -i hosts install/elk-client.yml --extra-vars 'elk_server=X.X.X.X'
 ```
    - Once this completes return to your ELK and you'll see log results come in from ELK/EFK clients via filebeat
-![ELK](/image/elk-index-5.x-4.png?raw=true "watch the magic")
+![ELK](/images/elk-index-5.x-4.png?raw=true "watch the magic")
 
 
 
