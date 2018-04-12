@@ -2,7 +2,7 @@
 ===========
 Ansible Playbook for setting up the ELK Stack in TDRIVE2 TEST Enviorment
 
-![ELK](/image/ansible-elk.png?raw=true)
+![elk](/image/ansible-elk.png?raw=true)
 
 ## What does it do?
    - Automated deployment of a full ELK stack (Elasticsearch, Logstash/Fluentd, Kibana)
@@ -54,11 +54,11 @@ ansible-playbook -i hosts elk.yml
       - username: ```admin```
       - password: ```admin```
 
-![ELK](/image/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
+![elk](/image/elk-index-5.x-1.png?raw=true "Select @timestamp from drop-down.")
 
-![ELK](/image/elk-index-5.x-2.png?raw=true "Click the blue create button.")
+![elk](/image/elk-index-5.x-2.png?raw=true "Click the blue create button.")
 
-![ELK](/image/elk-index-5.x-3.png?raw=true "Click Discover")
+![elk](/image/elk-index-5.x-3.png?raw=true "Click Discover")
 
 ## ELK Client Instructions
    - Run the client playbook against the generated ``elk_server`` variable
