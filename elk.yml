@@ -1,7 +1,5 @@
 ---
-#
-# Playbook to install the ELK stack
-#
+
 - hosts: elk
   remote_user: ubuntu
   become: yes
