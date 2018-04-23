@@ -1,0 +1,5 @@
+---
+
+#- include: elk_master.yml
+
+- include: elk_client.yml

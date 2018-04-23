@@ -3,15 +3,39 @@
 # Installing Java 8
 #
 # Add the Java ppa repository
-- name: Add Java repository
-  apt_repository:
-   repo: ppa:webupd8team/java
+#- name: Add Java repository
+ # apt_repository:
+ #  repo: ppa:webupd8team/java
 # Automatically accepts the Oracle License popup in the terminal
-- name: Automatically select the Oracle License
-  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+#- name: Automatically select the Oracle License
+ # shell: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 # Install Java 8
-- name: Install the Java 8 package
-  apt:
-   name: oracle-java8-installer
-   state: present
+#- name: Install the Java 8 package
+ # apt:
+#   name: oracle-java8-installer
+#   state: present
 #   update_cache: yes
+
+- name: add add-apt-repostory
+  apt: pkg=software-properties-common state=present update_cache=yes
+  sudo: yes 
+    
+- name: add add-apt-repostory
+  apt: pkg=python-software-properties state=present update_cache=yes
+  sudo: yes 
+  when: ansible_distribution_release == "precise"
+
+- name: add webupd8 ppa
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: update
+  shell: apt-get update
+  sudo: yes
+
+- name: auto accept oracle jdk license
+  shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+  sudo: yes
+
+- name: install java8
+  shell: apt-get install -y oracle-java8-installer ca-certificates
+  sudo: yes
